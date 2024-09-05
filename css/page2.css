@@ -1,0 +1,141 @@
+@charset "utf-8";
+
+body{
+    background-repeat: no-repeat;
+    color: #555151;
+    text-align: center;
+    margin: 0 auto;
+    background-image: linear-gradient(to top, #c1dfc4 0%, #ecf4f3 100%);
+    background-attachment: fixed;
+}
+
+h1{
+    margin: 0;
+}
+h2{
+    font-size: 300%;
+    border-bottom: 6px solid #b89068;
+    display: inline-block;
+}
+h3{
+    color: #b89068;
+}
+
+.box{
+  width: 500px;
+  margin: 0 auto;
+}
+
+
+/* ハンバーガーメニュー */
+.header {
+    height: 50px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    position: relative;
+    top: 20px;
+    z-index: 999;
+}
+.hamburger-menu {
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    border: none;
+    background: transparent;
+    appearance: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 9999;
+}
+.hamburger-menu_bar {
+    display: inline-block;
+    width: 44%;
+    height: 5px;
+    background: #555151;
+    position: absolute;
+    left: 50%;
+    /* transform: translateX(-50%); */
+    transition: .5s;
+}
+.hamburger-menu_bar:first-child {
+    top: 16px;
+}
+.hamburger-menu_bar:nth-child(2) {
+    top: 28px;
+}
+.hamburger-menu_bar:last-child {
+    top: 40px;
+}
+.hamburger-menu--open .hamburger-menu_bar {
+    transform: translateX(5px);
+}
+.hamburger-menu--open .hamburger-menu_bar:first-child {
+    transform:  rotate(45deg) translateY(17px) translateX(1px);
+}
+.hamburger-menu--open .hamburger-menu_bar:last-child {
+    transform:  rotate(-45deg) translateY(-17px) translateX(-1px);
+}
+.hamburger-menu--open .hamburger-menu_bar:nth-child(2) {
+    opacity: 0;
+}
+  
+.navigation {
+    display: none;
+    background: #57a99a;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 99;
+}
+.navigation_list {
+    text-align: center;
+    list-style: none;
+    top: 0;
+    padding: 0;
+    margin: 0;
+}
+.navigation_link {
+    color: #ecf4f3;
+    font-weight: 700;
+    text-decoration: none;
+    display: block;
+    padding: 24px 0;
+    transition: 0.5s;
+}
+.navigation_link:hover{
+    background-color: cadetblue;
+}
+
+/* 写真 */
+.photo{
+    display: flex;
+    margin: 10px auto;
+    width: fit-content;
+}
+
+img{
+    width: 80%;
+    height: fit-content;
+    margin: 0px 30px;
+}
+
+@media screen and (max-width: 800px) {
+  .box{
+      width: auto;
+  }
+  ul{
+      display:contents;
+      margin: 0 auto;
+      width: auto;
+  }
+  ul li{
+      margin: 0;
+  }
+  .photo{
+      display: block;
+  }
+  img{
+      width: 20vh;
+  }
+}
